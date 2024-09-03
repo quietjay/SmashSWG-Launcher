@@ -292,3 +292,11 @@ function saveConfig() {
 }
 
 showSettingsPanel();
+// Adding window drag functionality
+const { remote } = require('electron');
+const currentWindow = remote.getCurrentWindow();
+
+document.getElementById('drag-region').addEventListener('mousedown', (e) => {
+    e.preventDefault();
+    currentWindow.startDrag();
+});
